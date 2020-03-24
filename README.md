@@ -1,4 +1,4 @@
-# OutWatch-libs - OutWatch Helpers for javascript libraries
+# OutWatch-libs - OutWatch Helpers for javascript libraries [![Build Status](https://travis-ci.org/OutWatch/outwatch-libs.svg?branch=master)](https://travis-ci.org/OutWatch/outwatch-libs)
 
 This library provides helpers/wrapper for javascript libraries that can be used with [OutWatch](https://github.com/outwatch/outwatch).
 
