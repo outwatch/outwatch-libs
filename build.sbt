@@ -100,10 +100,23 @@ lazy val outwatchLibsClipboardJs = project
         Nil
   )
 
+lazy val outwatchLibsFlatpickr = project
+  .in(file("flatpickr"))
+  .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
+  .settings(librarySettings)
+  .settings(
+    name := "OutWatch-libs-Flatpickr",
+    normalizedName := "outwatch-libs-flatpickr",
+
+    npmDependencies in Compile ++=
+        "flatpickr" -> "4.6.3" ::
+        Nil
+  )
+
 lazy val root = project
   .in(file("."))
   .settings(
     name := "outwatch-libs-root",
     skip in publish := true,
   )
-  .aggregate(outwatchLibsHammerJs, outwatchLibsClipboardJs)
+  .aggregate(outwatchLibsHammerJs, outwatchLibsClipboardJs, outwatchLibsFlatpickr)

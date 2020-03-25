@@ -8,6 +8,7 @@ We have prepared some wrappers for javascript libraries:
 ```scala
 libraryDependencies += "com.github.outwatch.outwatch-libs" %%% "outwatch-libs-hammerjs" % "master-SNAPSHOT" // for hammer-js
 libraryDependencies += "com.github.outwatch.outwatch-libs" %%% "outwatch-libs-clipboardjs" % "master-SNAPSHOT" // for clipboard-js
+libraryDependencies += "com.github.outwatch.outwatch-libs" %%% "outwatch-libs-flatpickr" % "master-SNAPSHOT" // for flatpickr
 ```
 
 ## Bugs and Feedback
@@ -53,6 +54,20 @@ import outwatch.libs.clipboardjs.ClipboardJs
 button(
   ClipboardJs.onClickCopyToClipboard("Copy this text")
 )
+
+```
+
+### flatpickr
+
+You can use [flatpickr](https://github.com/flatpickr/flatpickr) for integrating a datetime-picker:
+
+```scala
+
+import outwatch.libs.flatpickr.Flatpickr
+
+Flatpickr.flatpickr("Select Date and Time", withTime = true, initialDate = None).foreach { date =>
+  println("Date selected: " + date)
+}
 
 ```
 
