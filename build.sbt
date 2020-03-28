@@ -100,6 +100,23 @@ lazy val outwatchLibsClipboardJs = project
         Nil
   )
 
+lazy val outwatchLibsChartJs = project
+  .in(file("chartjs"))
+  .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
+  .settings(librarySettings)
+  .settings(
+    name := "OutWatch-libs-ChartJs",
+    normalizedName := "outwatch-libs-chartjs",
+
+    //libraryDependencies ++=
+    //    ScalablyTyped.C.chart_dot_js % scalaVersion.value ::
+    //    Nil,
+
+    npmDependencies in Compile ++=
+        "chart.js" -> "2.8.0" ::
+        Nil
+  )
+
 lazy val outwatchLibsFlatpickr = project
   .in(file("flatpickr"))
   .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
@@ -119,4 +136,4 @@ lazy val root = project
     name := "outwatch-libs-root",
     skip in publish := true,
   )
-  .aggregate(outwatchLibsHammerJs, outwatchLibsClipboardJs, outwatchLibsFlatpickr)
+  .aggregate(outwatchLibsHammerJs, outwatchLibsClipboardJs, outwatchLibsFlatpickr, outwatchLibsChartJs)
