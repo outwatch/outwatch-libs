@@ -1,6 +1,5 @@
 import Options._
 
-
 inThisBuild(Seq(
   version := "0.1.0-SNAPSHOT",
 
@@ -12,18 +11,18 @@ inThisBuild(Seq(
 
   licenses += ("Apache 2", url("https://www.apache.org/licenses/LICENSE-2.0.txt")),
 
-  homepage := Some(url("https://outwatch.github.io/")),
+	  homepage := Some(url("https://outwatch.github.io/")),
 
-  scmInfo := Some(ScmInfo(
-    url("https://github.com/OutWatch/outwatch-libs"),
-    "scm:git:git@github.com:OutWatch/outwatch-libs.git",
-    Some("scm:git:git@github.com:OutWatch/outwatch-libs.git"))
-  )
-))
+		  scmInfo := Some(ScmInfo(
+			  url("https://github.com/OutWatch/outwatch-libs"),
+				  "scm:git:git@github.com:OutWatch/outwatch-libs.git",
+				  Some("scm:git:git@github.com:OutWatch/outwatch-libs.git"))
+			  )
+		  ))
 
 lazy val commonSettings = Seq(
-  addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
-  addCompilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
+	addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
+	addCompilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
 
   useYarn := true,
 
@@ -32,15 +31,17 @@ lazy val commonSettings = Seq(
     Nil,
 
   libraryDependencies ++= Seq(
-    "org.scalatest" %%% "scalatest" % "3.1.1" % Test,
+    "org.scalatest" %%% "scalatest" % "3.2.0" % Test,
     "com.github.ghik" % "silencer-lib" % "1.6.0" % Provided cross CrossVersion.full,
-    "com.github.outwatch.outwatch" %%% "outwatch" % "f3a15f2b"
+    "com.github.outwatch.outwatch" %%% "outwatch" % "61deece"		//"f3a15f2b" original
   ),
 
   scalacOptions ++= CrossVersion.partialVersion(scalaVersion.value).map(v =>
     allOptionsForVersion(s"${v._1}.${v._2}", true)
   ).getOrElse(Nil),
-  scalacOptions in (Compile, console) ~= (_.diff(badConsoleFlags))
+
+  scalacOptions in (Compile, console) ~= (_.diff(badConsoleFlags)),
+
 )
 
 lazy val librarySettings = commonSettings ++ Seq(
