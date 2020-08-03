@@ -11,14 +11,14 @@ inThisBuild(Seq(
 
   licenses += ("Apache 2", url("https://www.apache.org/licenses/LICENSE-2.0.txt")),
 
-	  homepage := Some(url("https://outwatch.github.io/")),
+  homepage := Some(url("https://outwatch.github.io/")),
 
-		  scmInfo := Some(ScmInfo(
-			  url("https://github.com/OutWatch/outwatch-libs"),
-				  "scm:git:git@github.com:OutWatch/outwatch-libs.git",
-				  Some("scm:git:git@github.com:OutWatch/outwatch-libs.git"))
-			  )
-		  ))
+  scmInfo := Some(ScmInfo(
+    url("https://github.com/OutWatch/outwatch-libs"),
+    "scm:git:git@github.com:OutWatch/outwatch-libs.git",
+    Some("scm:git:git@github.com:OutWatch/outwatch-libs.git"))
+  )
+))
 
 lazy val commonSettings = Seq(
 	addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
@@ -33,7 +33,7 @@ lazy val commonSettings = Seq(
   libraryDependencies ++= Seq(
     "org.scalatest" %%% "scalatest" % "3.2.0" % Test,
     "com.github.ghik" % "silencer-lib" % "1.6.0" % Provided cross CrossVersion.full,
-    "com.github.outwatch.outwatch" %%% "outwatch" % "61deece"		//"f3a15f2b" original
+    "com.github.outwatch.outwatch" %%% "outwatch" % "61deece"
   ),
 
   scalacOptions ++= CrossVersion.partialVersion(scalaVersion.value).map(v =>

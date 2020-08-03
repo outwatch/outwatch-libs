@@ -41,7 +41,6 @@ trait PropagatedHammer extends Hammer[PropagatingEvent] {
 // Hammer.js does not natively support event propagation. This wrapper fixes it.
 // https://github.com/hammerjs/hammer.js/issues/807
 // https://github.com/josdejong/propagating-hammerjs
-//@js.native
 @JSImport("propagating-hammerjs", JSImport.Namespace)
 @js.native
 object propagating extends js.Function1[Hammer[Event], PropagatedHammer] {
