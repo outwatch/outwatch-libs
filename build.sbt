@@ -21,8 +21,8 @@ inThisBuild(Seq(
 ))
 
 lazy val commonSettings = Seq(
-	addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
-	addCompilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
+  addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
+  addCompilerPlugin("com.github.ghik" % "silencer-plugin" % "1.6.0" cross CrossVersion.full),
 
   useYarn := true,
 
