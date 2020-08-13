@@ -1,6 +1,5 @@
 import Options._
 
-
 inThisBuild(Seq(
   version := "0.1.0-SNAPSHOT",
 
@@ -32,15 +31,17 @@ lazy val commonSettings = Seq(
     Nil,
 
   libraryDependencies ++= Seq(
-    "org.scalatest" %%% "scalatest" % "3.1.1" % Test,
+    "org.scalatest" %%% "scalatest" % "3.2.0" % Test,
     "com.github.ghik" % "silencer-lib" % "1.6.0" % Provided cross CrossVersion.full,
-    "com.github.outwatch.outwatch" %%% "outwatch" % "f3a15f2b"
+    "com.github.outwatch.outwatch" %%% "outwatch" % "61deece"
   ),
 
   scalacOptions ++= CrossVersion.partialVersion(scalaVersion.value).map(v =>
     allOptionsForVersion(s"${v._1}.${v._2}", true)
   ).getOrElse(Nil),
-  scalacOptions in (Compile, console) ~= (_.diff(badConsoleFlags))
+
+  scalacOptions in (Compile, console) ~= (_.diff(badConsoleFlags)),
+
 )
 
 lazy val librarySettings = commonSettings ++ Seq(
